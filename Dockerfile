@@ -12,7 +12,7 @@ RUN apk update && \
     g++ -std=c++11 CppTesterTest.cpp -o CppTesterTest && \
     echo "arg=();for var in \"\$@\";do arg+=(\$(echo -n \"\$var\" | base64 -d)); done; ./CppTester \"\${arg[@]}\"" > run.sh && \
     chmod 755 run.sh && \
-    apk del .build-deps
+    apk del .build-deps && \
     rm -rf /tmp/*
     
 ENTRYPOINT ["/bin/bash", "/root/run.sh"]
