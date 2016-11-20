@@ -13,6 +13,7 @@ RUN apk update && \
     echo "arg=();for var in \"\$@\";do arg+=(\"\$(echo -n \"\$var\" | base64 -d)\"); done; /root/CppTester \"\${arg[@]}\"" > run.sh && \
     chmod 755 run.sh && \
     apk del .build-deps && \
+    apk add --no-cache libstdc++ && \
     rm -rf /tmp/*
     
 ENTRYPOINT ["/bin/bash", "/root/run.sh"]
