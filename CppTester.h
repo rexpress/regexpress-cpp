@@ -108,7 +108,7 @@ public:
             }
         } else if(test_type == "search") {
             result["type"] = "GROUP";
-            result["result"]["columns"] = json();
+            result["result"]["columns"] = json::array();
             smatch match;
             bool first = true;
 
