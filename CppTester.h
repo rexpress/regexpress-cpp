@@ -114,7 +114,7 @@ public:
 
             for(string test_string: test_strings) {
                 json groups_list;
-                groups_list["list"] = json();
+                groups_list["list"] = json::array();
                 
                 string temp_string = test_string;
                 while(regex_search(temp_string, match, pattern, (match_flag_type) match_flags)) {
