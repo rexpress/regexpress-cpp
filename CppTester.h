@@ -75,7 +75,6 @@ public:
             } else if(subtype == "extract") {
                 result["type"] = "GROUP";
                 result["result"]["columns"] = json();
-
             }
             smatch match;
             bool first = true;
@@ -109,6 +108,7 @@ public:
             }
         } else if(test_type == "search") {
             result["type"] = "GROUP";
+            result["result"]["columns"] = json();
             smatch match;
             bool first = true;
 
